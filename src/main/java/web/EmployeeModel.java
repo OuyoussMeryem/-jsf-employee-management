@@ -39,23 +39,8 @@ public class EmployeeModel {
         return "modifier-employee";
 	}
 	
-	boolean emailExiste(String email) {
-	    List<Employee> employees = edi.SelectALL();
-	    for (Employee emp : employees) {
-	        if (email.equals(emp.getEmail())) {
-	           
-	            return true;
-	        }
-	    }
-	    
-	    return false;
-	}
-	
+
 	public String ModifierEmployee() {
-		if (emailExiste(employee.getEmail())) {
-			return null;
-	    }
-		
 		edi.update(employee);
 		return "employee";
 	}
